@@ -1,10 +1,19 @@
 package map;
 import java.util.ArrayList;
 import robot.robot;
+import java.util.stream.Stream;
+import java.nio.file.Files;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 
 
 public class map {
-    private ArrayList<coin> pileOfCoins= new ArrayList<>();
+    public ArrayList<String> rawMap=new ArrayList<>();
+    public ArrayList<String> rawInstructions = new ArrayList<>();
+
+
+    private ArrayList<beeper> pileOfCoins= new ArrayList<>();
     private ArrayList<wall> groupOfWalls=new ArrayList<>();
     private ArrayList<robot> robotWithinMap=new ArrayList<>();
 
@@ -34,9 +43,24 @@ public class map {
             //if pick->
     }
 
-    public String readFile(String nameOfFile) {
+    public String readFile(String nameOfFile, int typeOfFile) {
         String fileContent ="";
-        return fileContent;
+
+        try {
+            Stream<String> lines = Files. lines (Paths.get("C:/UVG/2018/Laboratorio 4/src/map/"+nameOfFile),StandardCharsets. UTF_8);
+            if( typeOfFile==1){
+                lines.forEach(s -> rawMap.add(s));
+                return rawMap[];}
+                else if(typeOfFile==2) {
+                lines.forEach(s -> rawInstructions.add(s));
+                return rawMap[];
+            }
+            }
+         catch (IOException exception) {
+            System. out .println( "Error!" );
+        }
+
+
     }
 
     private boolean isMovementPossible(int destination_X,int destination_Y){

@@ -19,16 +19,18 @@ public class main {
 //            System. out .println( "Error!" );
 //        }
 //    }
-
+        map thisWorld = new map();
         Scanner read= new Scanner(System.in);
 
-        System.out.println("ingrese un digito");
+        System.out.println("Tngrese el nombre del archivo del Mapa (agregue extension el archivo)");
         String fileContent="";
+        String userInput=read.nextLine();
+        fileContent=thisWorld.readFile(userInput,1);
 
        // int value= read.nextInt();
-        map thisWorld = new map();
-        thisWorld.createWalls(fileContent);
+        //thisWorld.createWalls(fileContent);
         thisWorld.InstructionsExecuter();
+
 
 }
 

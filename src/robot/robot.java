@@ -4,6 +4,7 @@ public class robot {
     private int coordinate_X;
     private int coordinate_Y;
     private int dir;
+    private int beepersCollected;
     public final int Representation_Right=1;
     public final int Representation_Up=0;
     public final int Representation_Left=3;
