@@ -7,6 +7,7 @@ public class wall {
     public wall(int x,int y){
         this.coordinate_X=x;
         this.coordinate_Y=y;
+        System.out.println("se creo una pared con coordenada X:"+ this.coordinate_X + " y coordenada Y:"+this.coordinate_Y);
     }
     @Override
     public String toString() {
